@@ -81,203 +81,203 @@ Step 4: Start the server (node server.js)
 
 ## Example API Requests
 ## register user
-####method: post
-####url: http://localhost:5000/api/auth/signup
-####requestbody: 
-####{
+#### method: post
+#### url: http://localhost:5000/api/auth/signup
+#### requestbody: 
+#### {
 ####  "name": "Kaushik",
 ####  "email": "kaushik@example.com",
 ####  "password": "123456"
-####}
-####output:
-####{
+#### }
+#### output:
+#### {
 ####    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTIyMH0.pCvRrOUpBDaXfEIxfM8Ca2-ZDO4zEVHdGoLhApjqj7g",
 ####    "user": {
 ####        "id": "68d3cdb4ea1d0b0df7906622",
 ####        "name": "Kaushik",
 ####        "email": "kaushik@example.com"
 ####    }
-####}
+#### }
 
 
-##login user
-method: post
-url: http://localhost:5000/api/auth/signin
-requestbody:
-{
-  "email": "kaushik@example.com",
-  "password": "123456"
-}
-output:
-{
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTY4Nn0.5B8fslxA1yrGKZbCwkpd_-JK655NIsp3yMLoPWnwXZE",
-    "user": {
-        "id": "68d3cdb4ea1d0b0df7906622",
-        "name": "Kaushik",
-        "email": "kaushik@example.com"
-    }
-}
+## login user
+#### method: post
+#### url: http://localhost:5000/api/auth/signin
+#### requestbody:
+#### {
+####   "email": "kaushik@example.com",
+####   "password": "123456"
+#### }
+#### output:
+#### {
+####     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTY4Nn0.5B8fslxA1yrGKZbCwkpd_-JK655NIsp3yMLoPWnwXZE",
+####     "user": {
+####         "id": "68d3cdb4ea1d0b0df7906622",
+####         "name": "Kaushik",
+####         "email": "kaushik@example.com"
+####     }
+#### }
 
 
-##add new book
-method: post
-url: http://localhost:5000/api/book/
-headers: 
-key: Authorization
-value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTY4Nn0.5B8fslxA1yrGKZbCwkpd_-JK655NIsp3yMLoPWnwXZE
-requestbody: 
-{
-    "title": "example book 1",
-    "author": "example author",
-    "description": "sample description for testing",
-    "price": 100,
-    "genre": "sci-fi"
-}
-output: 
-{
-    "title": "example book 1",
-    "author": "example author",
-    "price": 100,
-    "genre": "sci-fi",
-    "description": "sample description for testing",
-    "numReviews": 0,
-    "rating": 0,
-    "_id": "68d3d4550b8437d9daacb1a2",
-    "__v": 0
-}
+## add new book
+#### method: post
+#### url: http://localhost:5000/api/book/
+#### headers: 
+#### key: Authorization
+#### value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTY4Nn0.5B8fslxA1yrGKZbCwkpd_-JK655NIsp3yMLoPWnwXZE
+#### requestbody: 
+#### {
+####     "title": "example book 1",
+####     "author": "example author",
+####     "description": "sample description for testing",
+####     "price": 100,
+####     "genre": "sci-fi"
+#### }
+#### output: 
+#### {
+####     "title": "example book 1",
+####     "author": "example author",
+####     "price": 100,
+####     "genre": "sci-fi",
+####     "description": "sample description for testing",
+####     "numReviews": 0,
+####     "rating": 0,
+####     "_id": "68d3d4550b8437d9daacb1a2",
+####     "__v": 0
+#### }
 
 
-##fetch all book details
-method: get
-url: http://localhost:5000/api/book/
-requestbody: 
-output: 
---WHEN NO BOOKS ARE ADDED
-{
-    "books": [],
-    "page": 1,
-    "pages": 0
-}
---AFTER ADDING BOOK
-{
-    "books": [
-        {
-            "_id": "68d3d2de685cf7653b3f033c",
-            "title": "example book 1",
-            "author": "example author",
-            "price": 100,
-            "genre": "sci-fi",
-            "description": "sample description for testing",
-            "numReviews": 0,
-            "rating": 0,
-            "__v": 0
-        }
-    ],
-    "page": 1,
-    "pages": 1
-}
+## fetch all book details
+#### method: get
+#### url: http://localhost:5000/api/book/
+#### requestbody: 
+#### output: 
+#### --WHEN NO BOOKS ARE ADDED
+#### {
+####     "books": [],
+####     "page": 1,
+####     "pages": 0
+#### }
+#### --AFTER ADDING BOOK
+#### {
+####     "books": [
+####         {
+####             "_id": "68d3d2de685cf7653b3f033c",
+####             "title": "example book 1",
+####             "author": "example author",
+####             "price": 100,
+####             "genre": "sci-fi",
+####             "description": "sample description for testing",
+####             "numReviews": 0,
+####             "rating": 0,
+####             "__v": 0
+####         }
+####     ],
+####     "page": 1,
+####     "pages": 1
+#### }
 
 
-##fetch book details by id
-method: get
-url: http://localhost:5000/api/book/68d3d2de685cf7653b3f033c
-requestbody: NA
-output: 
-{
-    "_id": "68d3d2de685cf7653b3f033c",
-    "title": "example book 1",
-    "author": "example author",
-    "price": 100,
-    "genre": "sci-fi",
-    "description": "sample description for testing",
-    "numReviews": 0,
-    "rating": 0,
-    "__v": 0
-}
+## fetch book details by id
+#### method: get
+#### url: http://localhost:5000/api/book/68d3d2de685cf7653b3f033c
+#### requestbody: NA
+#### output: 
+#### {
+####     "_id": "68d3d2de685cf7653b3f033c",
+####     "title": "example book 1",
+####     "author": "example author",
+####     "price": 100,
+####     "genre": "sci-fi",
+####     "description": "sample description for testing",
+####     "numReviews": 0,
+####     "rating": 0,
+####     "__v": 0
+#### }
 
 
-##review a book
-method: post
-url: http://localhost:5000/api/book/68d3d2de685cf7653b3f033c/reviews
-headers:
-key: Authorization
-value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTY4Nn0.5B8fslxA1yrGKZbCwkpd_-JK655NIsp3yMLoPWnwXZE
-key: Content-Type
-value: application/json
-requestbody: 
-{
-    "rating": 3,
-    "comment": "lengthy"
-}
-output: 
-{
-    "message": "Review added"
-}
+## review a book
+#### method: post
+#### url: http://localhost:5000/api/book/68d3d2de685cf7653b3f033c/reviews
+#### headers:
+#### key: Authorization
+#### value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTY4Nn0.5B8fslxA1yrGKZbCwkpd_-JK655NIsp3yMLoPWnwXZE
+#### key: Content-Type
+#### value: application/json
+#### requestbody: 
+#### {
+####     "rating": 3,
+####     "comment": "lengthy"
+#### }
+#### output: 
+#### {
+####     "message": "Review added"
+#### }
 
 
-##update your review
-method: put
-url: http://localhost:5000/api/review/68d3da2d19d979bea2a7f342
-headers:
-key: Authorization
-value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTY4Nn0.5B8fslxA1yrGKZbCwkpd_-JK655NIsp3yMLoPWnwXZE
-key: Content-Type
-value: application/json
-requestbody: 
-{
-    "rating": 4,
-    "comment": "lengthy 123456789"
-}
-output: 
-{
-    "message": "Review updated",
-    "review": {
-        "_id": "68d3da2d19d979bea2a7f342",
-        "book": "68d3d2de685cf7653b3f033c",
-        "user": "68d3cdb4ea1d0b0df7906622",
-        "rating": 4,
-        "comment": "lengthy 123456789",
-        "__v": 0
-    }
-}
+## update your review
+#### method: put
+#### url: http://localhost:5000/api/review/68d3da2d19d979bea2a7f342
+#### headers:
+#### key: Authorization
+#### value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTY4Nn0.5B8fslxA1yrGKZbCwkpd_-JK655NIsp3yMLoPWnwXZE
+#### key: Content-Type
+#### value: application/json
+#### requestbody: 
+#### {
+####     "rating": 4,
+####     "comment": "lengthy 123456789"
+#### }
+#### output: 
+#### {
+####     "message": "Review updated",
+####     "review": {
+####         "_id": "68d3da2d19d979bea2a7f342",
+####         "book": "68d3d2de685cf7653b3f033c",
+####         "user": "68d3cdb4ea1d0b0df7906622",
+####         "rating": 4,
+####         "comment": "lengthy 123456789",
+####         "__v": 0
+####     }
+#### }
 
 
-##delete your own review
-method: delete
-url: http://localhost:5000/api/review/68d3da2d19d979bea2a7f342
-headers:
-key: Authorization
-value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTY4Nn0.5B8fslxA1yrGKZbCwkpd_-JK655NIsp3yMLoPWnwXZE
-key: Content-Type
-value: application/json
-requestbody: NA
-output: 
-{
-    "message": "Review deleted"
-}
+## delete your own review
+#### method: delete
+#### url: http://localhost:5000/api/review/68d3da2d19d979bea2a7f342
+#### headers:
+#### key: Authorization
+#### value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTY4Nn0.5B8fslxA1yrGKZbCwkpd_-JK655NIsp3yMLoPWnwXZE
+#### key: Content-Type
+#### value: application/json
+#### requestbody: NA
+#### output: 
+#### {
+####     "message": "Review deleted"
+#### }
 
 
-##search book by title
-method: get
---WHEN WRONG PARAMETER IS PASSED
-url: http://localhost:5000/api/book/search?q=sampl
-requestbody: NA
-output: 
-[]
---WHEN RIGHT PARAMETER IS PASSED (partial)
-url: http://localhost:5000/api/book/search?q=exa
-requestbody: NA
-output: 
-[
-    {
-        "_id": "68d3d2de685cf7653b3f033c",
-        "title": "example book 1",
-        "author": "example author",
-        "price": 100,
-        "genre": "sci-fi",
-        "description": "sample description for testing",
-        "numReviews": 0,
-        "rating": 0,
-        "__v": 0
-    }
-]
+## search book by title
+#### method: get
+#### --WHEN WRONG PARAMETER IS PASSED
+#### url: http://localhost:5000/api/book/search?q=sampl
+#### requestbody: NA
+#### output: 
+#### []
+#### --WHEN RIGHT PARAMETER IS PASSED (partial)
+#### url: http://localhost:5000/api/book/search?q=exa
+#### requestbody: NA
+#### output: 
+#### [
+####     {
+####         "_id": "68d3d2de685cf7653b3f033c",
+####         "title": "example book 1",
+####         "author": "example author",
+####         "price": 100,
+####         "genre": "sci-fi",
+####         "description": "sample description for testing",
+####         "numReviews": 0,
+####         "rating": 0,
+####         "__v": 0
+####     }
+#### ]
