@@ -79,24 +79,25 @@ Step 4: Start the server (node server.js)
 - unique index on (book, user)
 
 
-##register user
-method: post
-url: http://localhost:5000/api/auth/signup
-requestbody: 
-{
-  "name": "Kaushik",
-  "email": "kaushik@example.com",
-  "password": "123456"
-}
-output:
-{
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTIyMH0.pCvRrOUpBDaXfEIxfM8Ca2-ZDO4zEVHdGoLhApjqj7g",
-    "user": {
-        "id": "68d3cdb4ea1d0b0df7906622",
-        "name": "Kaushik",
-        "email": "kaushik@example.com"
-    }
-}
+## Example API Requests
+## register user
+####method: post
+####url: http://localhost:5000/api/auth/signup
+####requestbody: 
+####{
+####  "name": "Kaushik",
+####  "email": "kaushik@example.com",
+####  "password": "123456"
+####}
+####output:
+####{
+####    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDNjZGI0ZWExZDBiMGRmNzkwNjYyMiIsImlhdCI6MTc1ODcxMTIyMH0.pCvRrOUpBDaXfEIxfM8Ca2-ZDO4zEVHdGoLhApjqj7g",
+####    "user": {
+####        "id": "68d3cdb4ea1d0b0df7906622",
+####        "name": "Kaushik",
+####        "email": "kaushik@example.com"
+####    }
+####}
 
 
 ##login user
